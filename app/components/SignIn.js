@@ -1,6 +1,6 @@
 'use client';
 import {useRouter} from 'next/navigation'
-import {signInWithGooglePopup, signInAuthUserWithEmailAndPassword} from '../utils/firebase/firebase.utils';
+import {signInWithGooglePopup, signInAuthUserWithEmailAndPassword, createUserProfileDocument} from '../utils/firebase/firebase.utils';
 import {useState} from 'react';
 
 export default function SignIn () {
@@ -20,10 +20,7 @@ export default function SignIn () {
   }
 
   const signInWithGoogle = async()  => {
-    console.log('we got here before popup')
     const response = await signInWithGooglePopup();
-    console.log('we got here before popup', response)
-
     router.push('/');
   }
 
