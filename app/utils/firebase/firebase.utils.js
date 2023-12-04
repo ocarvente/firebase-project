@@ -10,6 +10,8 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import {getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { getStorage } from "firebase/storage";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -85,3 +87,4 @@ export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
 
 
+export const blogStorage = getStorage(app);
